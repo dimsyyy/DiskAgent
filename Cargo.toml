@@ -2,7 +2,7 @@
 name = "diskagent"
 version = "0.1.0"
 edition = "2021"
-description = "DiskAgent - a basic TreeSize Free style disk usage analyzer"
+description = "DiskAgent - a lightweight disk usage analyzer for Windows"
 license = "MIT"
 
 [[bin]]

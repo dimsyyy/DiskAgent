@@ -2,7 +2,7 @@
 
 # DiskAgent
 
-**A lightweight TreeSize Free–style disk usage analyzer for Windows, built with Rust and egui.**
+**A lightweight disk usage analyzer for Windows, built with Rust and egui.**
 
 **Bahasa:** Indonesia · [English](README.en.md)
 
@@ -17,7 +17,7 @@
 
 </div>
 
-> **Status:** v0.1.0 — fitur inti sudah berjalan. Fitur lanjutan TreeSize Free belum termasuk.
+> **Status:** v0.1.0 — fitur inti sudah berjalan. Fitur lanjutan belum termasuk.
 
 ## Unduh
 
@@ -32,14 +32,14 @@ Tidak perlu installer: unduh file, lalu jalankan. Semua versi tersedia di halama
 
 DiskAgent adalah aplikasi desktop Windows untuk melihat folder atau file mana yang menghabiskan ruang disk. Pilih sebuah folder, jalankan pemindaian, lalu telusuri hasilnya lewat **Details tree** atau **Treemap Chart**.
 
-Aplikasi ini mengikuti alur dasar **TreeSize Free**:
+DiskAgent memiliki empat tab utama:
 
 - **Home** — mulai pemindaian, hentikan, refresh, dan buka folder.
 - **Pindai** (Scan) — pemindaian rekursif dengan progress dan status.
 - **Tampilan** (View) — Detail, Treemap, unit, kolom, dan sortir.
 - **Opsi** (Options) — pilihan bahasa **English** dan **Bahasa Indonesia**.
 
-DiskAgent bukan produk resmi TreeSize dan tidak memakai aset dari TreeSize. Semua ikon digambar sendiri dengan vektor.
+Semua ikon antarmuka digambar sendiri dengan vektor.
 
 ## Screenshot
 
@@ -238,7 +238,7 @@ src/
 - [x] Hapus permanen, pembuatan folder, buka Explorer, dan ekspor CSV.
 - [x] Integrasi Google Search untuk **Folder Apa ini?**.
 - [x] Rilis binary v0.1.0 di GitHub Releases.
-- [ ] Fitur lanjutan TreeSize Free (scheduled scan, duplicate finder, file age, top files).
+- [ ] Fitur lanjutan (scheduled scan, duplicate finder, file age, top files).
 - [ ] Installer Windows dan ikon aplikasi kustom.
 - [ ] CI dan lebih banyak unit test.
 
@@ -271,7 +271,7 @@ Dirilis di bawah [MIT License](LICENSE).
 
 ## Penghargaan
 
-- Terinspirasi oleh **TreeSize Free** dari JAM Software. DiskAgent tidak berafiliasi dengan JAM Software.
+- Terinspirasi oleh **TreeSize** dari JAM Software.
 - Dibangun dengan Rust, egui/eframe, rfd, dan serde.
 - Semua ikon antarmuka digambar sendiri dengan vektor.
 

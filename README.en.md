@@ -2,7 +2,7 @@
 
 # DiskAgent
 
-**A lightweight TreeSize Free–style disk usage analyzer for Windows, built with Rust and egui.**
+**A lightweight disk usage analyzer for Windows, built with Rust and egui.**
 
 **Language:** [Bahasa Indonesia](README.md) · English
 
@@ -17,7 +17,7 @@
 
 </div>
 
-> **Status:** v0.1.0 — core features are working. Advanced TreeSize Free features are not included yet.
+> **Status:** v0.1.0 — core features are working. Advanced features are not included yet.
 
 ## Download
 
@@ -32,14 +32,14 @@ No installer needed: download the file and run it. All versions are available on
 
 DiskAgent is a Windows desktop app for finding which folders or files are using disk space. Pick a folder, run a scan, then explore the results in the **Details tree** or **Treemap Chart**.
 
-It follows the basic **TreeSize Free** workflow:
+DiskAgent has four main tabs:
 
 - **Home** — start and stop scans, refresh, and open folders.
 - **Scan** — recursive scanning with progress and status.
 - **View** — Details, Treemap, units, columns, and sorting.
 - **Options** — **English** and **Bahasa Indonesia** language options.
 
-DiskAgent is not an official TreeSize product and does not use TreeSize assets. All icons are drawn in vector.
+All interface icons are drawn in vector.
 
 ## Screenshots
 
@@ -238,7 +238,7 @@ src/
 - [x] Permanent delete, folder creation, open in Explorer, and CSV export.
 - [x] Google Search integration for **What is this folder?**.
 - [x] v0.1.0 release binary on GitHub Releases.
-- [ ] Advanced TreeSize Free features (scheduled scans, duplicate finder, file age, top files).
+- [ ] Advanced features (scheduled scans, duplicate finder, file age, top files).
 - [ ] Windows installer and a custom app icon.
 - [ ] CI and more unit tests.
 
@@ -271,7 +271,7 @@ Released under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-- Inspired by **TreeSize Free** from JAM Software. DiskAgent is not affiliated with JAM Software.
+- Inspired by **TreeSize** from JAM Software.
 - Built with Rust, egui/eframe, rfd, and serde.
 - All UI icons are drawn in vector.
 
