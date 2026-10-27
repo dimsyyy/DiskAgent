@@ -6,17 +6,27 @@
 
 **Language:** [Bahasa Indonesia](README.md) · English
 
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)](#requirements)
+[![Download DiskAgent.exe](https://img.shields.io/badge/Download-DiskAgent.exe-2ea44f?logo=windows&logoColor=white)](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)](#build-requirements)
 [![Rust](https://img.shields.io/badge/Rust-stable-CE422B?logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![egui](https://img.shields.io/badge/UI-egui%200.29-1f6feb)](https://github.com/emilk/egui)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](Cargo.toml)
 [![License](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 
-[Features](#features) · [Screenshots](#screenshots) · [Installation](#installation) · [Build from source](#build-from-source) · [Usage](#usage) · [Keyboard](#keyboard-shortcuts) · [Architecture](#architecture) · [License](#license)
+[Download](#download) · [Features](#features) · [Screenshots](#screenshots) · [Installation](#installation) · [Build from source](#build-from-source) · [Usage](#usage) · [Keyboard](#keyboard-shortcuts) · [Architecture](#architecture) · [License](#license)
 
 </div>
 
 > **Status:** v0.1.0 — core features are working. Advanced TreeSize Free features are not included yet.
+
+## Download
+
+[**Download DiskAgent.exe**](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe) — Windows 10/11 64-bit.
+
+No installer needed: download the file and run it. All versions are available on the [Releases](https://github.com/dimsyyy/DiskAgent/releases) page.
+
+> [!NOTE]
+> Release binaries are unsigned. Windows SmartScreen may show a warning on first launch; choose **More info → Run anyway** only if you trust the file from this official release page.
 
 ## About
 
@@ -75,9 +85,18 @@ The query uses the item name and up to three trailing location components. Windo
 
 ## Installation
 
-There is no installer or official binary release yet. Build directly from source.
+There are two ways to run DiskAgent:
 
-### Requirements
+- **Download the binary** — fastest, no Rust required.
+- **Build from source** — see [Build from source](#build-from-source).
+
+### Download the binary
+
+1. Open the [Releases](https://github.com/dimsyyy/DiskAgent/releases) page or click the **Download** button at the top.
+2. Download `DiskAgent.exe`.
+3. Run it directly; no installer is required.
+
+### Build requirements
 
 - Windows 10/11 64-bit.
 - [Rust](https://rustup.rs/) stable with edition 2021.
@@ -125,6 +144,8 @@ cargo build --release
 ```
 
 ## Running
+
+If you downloaded the binary from Releases, simply run `DiskAgent.exe` from your Downloads folder.
 
 Start the app without arguments:
 
@@ -216,9 +237,10 @@ src/
 - [x] English/Indonesian UI and persistent settings.
 - [x] Permanent delete, folder creation, open in Explorer, and CSV export.
 - [x] Google Search integration for **What is this folder?**.
+- [x] v0.1.0 release binary on GitHub Releases.
 - [ ] Advanced TreeSize Free features (scheduled scans, duplicate finder, file age, top files).
 - [ ] Windows installer and a custom app icon.
-- [ ] CI, more unit tests, and official release binaries.
+- [ ] CI and more unit tests.
 
 ## Limitations
 
@@ -227,7 +249,7 @@ src/
 - Advanced features such as scheduled scans, a duplicate finder, and file-age analysis are not available yet.
 - **Permanent delete bypasses the Recycle Bin.** Back up important data before deleting.
 - **What is this folder?** depends on Google and an internet connection; the result is not a guarantee that an item is safe to delete.
-- Local builds are unsigned, so Windows SmartScreen may show a warning on first launch.
+- Release binaries are unsigned, so Windows SmartScreen may show a warning on first launch.
 
 ## Contributing
 

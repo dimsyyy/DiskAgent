@@ -6,17 +6,27 @@
 
 **Bahasa:** Indonesia · [English](README.en.md)
 
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)](#persyaratan)
+[![Download DiskAgent.exe](https://img.shields.io/badge/Download-DiskAgent.exe-2ea44f?logo=windows&logoColor=white)](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)](#persyaratan-build)
 [![Rust](https://img.shields.io/badge/Rust-stable-CE422B?logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![egui](https://img.shields.io/badge/UI-egui%200.29-1f6feb)](https://github.com/emilk/egui)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](Cargo.toml)
 [![License](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 
-[Fitur](#fitur) · [Screenshot](#screenshot) · [Instalasi](#instalasi) · [Build dari source](#build-dari-source) · [Penggunaan](#penggunaan) · [Keyboard](#keyboard-shortcut) · [Arsitektur](#arsitektur) · [Lisensi](#lisensi)
+[Unduh](#unduh) · [Fitur](#fitur) · [Screenshot](#screenshot) · [Instalasi](#instalasi) · [Build dari source](#build-dari-source) · [Penggunaan](#penggunaan) · [Keyboard](#keyboard-shortcut) · [Arsitektur](#arsitektur) · [Lisensi](#lisensi)
 
 </div>
 
 > **Status:** v0.1.0 — fitur inti sudah berjalan. Fitur lanjutan TreeSize Free belum termasuk.
+
+## Unduh
+
+[**Unduh DiskAgent.exe**](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe) — Windows 10/11 64-bit.
+
+Tidak perlu installer: unduh file, lalu jalankan. Semua versi tersedia di halaman [Releases](https://github.com/dimsyyy/DiskAgent/releases).
+
+> [!NOTE]
+> Binary rilis belum ditandatangani. Windows SmartScreen dapat menampilkan peringatan saat pertama dijalankan; pilih **More info → Run anyway** hanya jika kamu yakin file berasal dari halaman rilis resmi ini.
 
 ## Tentang
 
@@ -75,9 +85,18 @@ Query memakai nama item dan maksimal tiga komponen lokasi terakhir. Nama user Wi
 
 ## Instalasi
 
-Saat ini belum ada installer atau binary release resmi. Build langsung dari source.
+Ada dua cara menjalankan DiskAgent:
 
-### Persyaratan
+- **Unduh binary** — cara tercepat, tidak perlu Rust.
+- **Build dari source** — lihat bagian [Build dari source](#build-dari-source).
+
+### Unduh binary
+
+1. Buka halaman [Releases](https://github.com/dimsyyy/DiskAgent/releases) atau klik tombol **Unduh** di bagian atas.
+2. Unduh `DiskAgent.exe`.
+3. Jalankan langsung; tidak perlu installer.
+
+### Persyaratan build
 
 - Windows 10/11 64-bit.
 - [Rust](https://rustup.rs/) stable dengan edition 2021.
@@ -125,6 +144,8 @@ cargo build --release
 ```
 
 ## Menjalankan
+
+Jika mengunduh dari Releases, cukup jalankan `DiskAgent.exe` dari folder unduhan.
 
 Jalankan aplikasi tanpa argumen:
 
@@ -216,9 +237,10 @@ src/
 - [x] Bahasa English/Indonesia dan settings persisten.
 - [x] Hapus permanen, pembuatan folder, buka Explorer, dan ekspor CSV.
 - [x] Integrasi Google Search untuk **Folder Apa ini?**.
+- [x] Rilis binary v0.1.0 di GitHub Releases.
 - [ ] Fitur lanjutan TreeSize Free (scheduled scan, duplicate finder, file age, top files).
 - [ ] Installer Windows dan ikon aplikasi kustom.
-- [ ] CI, lebih banyak unit test, dan release binary resmi.
+- [ ] CI dan lebih banyak unit test.
 
 ## Batasan
 
@@ -227,7 +249,7 @@ src/
 - Fitur lanjutan seperti scheduled scan, duplicate finder, dan analisis umur file belum tersedia.
 - **Hapus permanen tidak melalui Recycle Bin.** Backup data penting sebelum menghapus.
 - **Folder Apa ini?** bergantung pada Google dan koneksi internet; hasilnya bukan jaminan bahwa item aman dihapus.
-- Build lokal belum ditandatangani, jadi Windows SmartScreen bisa menampilkan peringatan saat pertama dijalankan.
+- Binary rilis belum ditandatangani, jadi Windows SmartScreen bisa menampilkan peringatan saat pertama dijalankan.
 
 ## Kontribusi
 
