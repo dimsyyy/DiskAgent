@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/DiskAgent.png" alt="DiskAgent icon" width="96">
+
 # DiskAgent
 
 **A lightweight disk usage analyzer for Windows, built with Rust and egui.**
