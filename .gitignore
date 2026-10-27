@@ -1,0 +1,5 @@
+/target
+/target2
+**/*.rs.bk
+*.pdb
+shot*.png
