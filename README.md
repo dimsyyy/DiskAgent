@@ -4,138 +4,138 @@
 
 **A lightweight disk usage analyzer for Windows, built with Rust and egui.**
 
-**Bahasa:** Indonesia · [English](README.en.md)
+**Language:** [Bahasa Indonesia](README.id.md) · English
 
 [![Download DiskAgent.exe](https://img.shields.io/badge/Download-DiskAgent.exe-2ea44f?logo=windows&logoColor=white)](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe)
-[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)](#persyaratan-build)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6?logo=windows&logoColor=white)](#build-requirements)
 [![Rust](https://img.shields.io/badge/Rust-stable-CE422B?logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![egui](https://img.shields.io/badge/UI-egui%200.29-1f6feb)](https://github.com/emilk/egui)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](Cargo.toml)
 [![License](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 
-[Unduh](#unduh) · [Fitur](#fitur) · [Screenshot](#screenshot) · [Instalasi](#instalasi) · [Build dari source](#build-dari-source) · [Penggunaan](#penggunaan) · [Keyboard](#keyboard-shortcut) · [Arsitektur](#arsitektur) · [Lisensi](#lisensi)
+[Download](#download) · [Features](#features) · [Screenshots](#screenshots) · [Installation](#installation) · [Build from source](#build-from-source) · [Usage](#usage) · [Keyboard](#keyboard-shortcuts) · [Architecture](#architecture) · [License](#license)
 
 </div>
 
-> **Status:** v0.1.0 — fitur inti sudah berjalan. Fitur lanjutan belum termasuk.
+> **Status:** v0.1.0 — core features are working. Advanced features are not included yet.
 
-## Unduh
+## Download
 
-[**Unduh DiskAgent.exe**](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe) — Windows 10/11 64-bit.
+[**Download DiskAgent.exe**](https://github.com/dimsyyy/DiskAgent/releases/latest/download/DiskAgent.exe) — Windows 10/11 64-bit.
 
-Tidak perlu installer: unduh file, lalu jalankan. Semua versi tersedia di halaman [Releases](https://github.com/dimsyyy/DiskAgent/releases).
+No installer needed: download the file and run it. All versions are available on the [Releases](https://github.com/dimsyyy/DiskAgent/releases) page.
 
 > [!NOTE]
-> Binary rilis belum ditandatangani. Windows SmartScreen dapat menampilkan peringatan saat pertama dijalankan; pilih **More info → Run anyway** hanya jika kamu yakin file berasal dari halaman rilis resmi ini.
+> Release binaries are unsigned. Windows SmartScreen may show a warning on first launch; choose **More info → Run anyway** only if you trust the file from this official release page.
 
-## Tentang
+## About
 
-DiskAgent adalah aplikasi desktop Windows untuk melihat folder atau file mana yang menghabiskan ruang disk. Pilih sebuah folder, jalankan pemindaian, lalu telusuri hasilnya lewat **Details tree** atau **Treemap Chart**.
+DiskAgent is a Windows desktop app for finding which folders or files are using disk space. Pick a folder, run a scan, then explore the results in the **Details tree** or **Treemap Chart**.
 
-DiskAgent memiliki empat tab utama:
+DiskAgent has four main tabs:
 
-- **Home** — mulai pemindaian, hentikan, refresh, dan buka folder.
-- **Pindai** (Scan) — pemindaian rekursif dengan progress dan status.
-- **Tampilan** (View) — Detail, Treemap, unit, kolom, dan sortir.
-- **Opsi** (Options) — pilihan bahasa **English** dan **Bahasa Indonesia**.
+- **Home** — start and stop scans, refresh, and open folders.
+- **Scan** — recursive scanning with progress and status.
+- **View** — Details, Treemap, units, columns, and sorting.
+- **Options** — **English** and **Bahasa Indonesia** language options.
 
-Semua ikon antarmuka digambar sendiri dengan vektor.
+All interface icons are drawn in vector.
 
-## Screenshot
+## Screenshots
 
-![Treemap Chart DiskAgent](docs/screenshots/treemap.png)
+![DiskAgent Treemap Chart](docs/screenshots/treemap.png)
 
-<p align="center"><sub><strong>Treemap Chart</strong> — proporsi ukuran folder dan file ditampilkan dalam kotak berukuran proporsional.</sub></p>
+<p align="center"><sub><strong>Treemap Chart</strong> — folder and file sizes shown as proportionally sized rectangles.</sub></p>
 
 <details>
-<summary><strong>Lihat tampilan Details</strong></summary>
+<summary><strong>View the Details screen</strong></summary>
 
-![Details DiskAgent](docs/screenshots/details.png)
+![DiskAgent Details](docs/screenshots/details.png)
 
 </details>
 
-## Fitur
+## Features
 
-| Kategori | Kemampuan |
+| Area | Capabilities |
 | --- | --- |
-| **Pemindaian** | Scan folder rekursif di background thread, UI tetap responsif, progress berjalan, dan scan bisa dihentikan. |
-| **Details tree** | Kolom Name, Size, Allocated Space, Files, Folders, % of Parent, dan Last Modified. Mendukung expand/collapse, sortir, dan bar persentase. |
-| **Treemap** | Tampilan *squarified* dengan warna per item, klik untuk memilih, klik dua kali untuk zoom ke folder, serta tombol Up/Root. |
-| **Filter & pencarian** | Include/exclude mask, ukuran minimum, umur file, sembunyikan folder kosong, dan pencarian nama file/folder. |
-| **Sortir & satuan** | Sortir dari header kolom atau combo, unit otomatis/TB/GB/MB/KB/B, dan jumlah desimal. |
-| **File actions** | Buat folder baru, buka lokasi di Explorer, salin path, ekspor CSV, dan hapus permanen dengan konfirmasi. |
-| **Folder Apa ini?** | Klik kanan folder/file untuk membuka Google Search dengan pertanyaan otomatis tentang fungsi dan keamanan item tersebut. |
-| **Tampilan** | Ribbon, address bar, tombol navigasi, status bar, kolom yang bisa diatur, dan bahasa English/Indonesia. |
-| **Windows integration** | Volume free space, cluster size, filesystem, elevated scan, dan restart sebagai Administrator. |
+| **Scanning** | Recursive folder scan on a background thread; responsive UI, live progress, and a cancellable scan. |
+| **Details tree** | Name, Size, Allocated Space, Files, Folders, % of Parent, and Last Modified columns. Expand/collapse, sorting, and percentage bars. |
+| **Treemap** | Squarified layout, color per item, click to select, double-click to zoom into a folder, plus Up/Root buttons. |
+| **Filters & search** | Include/exclude masks, minimum size, file age, hide empty folders, and file/folder name search. |
+| **Sorting & units** | Sort from column headers or the combo box; Auto/TB/GB/MB/KB/B units and decimal places. |
+| **File actions** | Create a folder, open the location in Explorer, copy the path, export CSV, and permanent delete with confirmation. |
+| **What is this folder?** | Right-click a folder/file to open Google Search with an automatic question about its purpose and safety. |
+| **Appearance** | Ribbon, address bar, navigation buttons, status bar, configurable columns, and English/Indonesian UI. |
+| **Windows integration** | Volume free space, cluster size, filesystem, elevated scan, and restart as Administrator. |
 
-### Hapus permanen
+### Permanent delete
 
-Klik kanan file/folder di **Details** atau **Treemap**, pilih **Hapus permanen**, lalu konfirmasi. Item langsung dihapus dan **tidak masuk Recycle Bin**. Folder root yang sedang dipindai tidak dapat dihapus.
+Right-click a file/folder in **Details** or **Treemap**, choose **Delete permanently**, then confirm. The item is removed immediately and **does not go to the Recycle Bin**. The folder currently being scanned cannot be deleted.
 
-### Folder Apa ini?
+### What is this folder?
 
-Klik kanan folder/file, lalu pilih **Folder Apa ini?** atau **File Apa ini?**. DiskAgent akan membuka browser default ke Google Search dengan pertanyaan seperti:
+Right-click a folder/file, then choose **What is this folder?** or **What is this file?**. DiskAgent opens the default browser to Google Search with a question such as:
 
-> Apa fungsi folder “node_modules” di “CODE\project” dan apakah aman dihapus?
+> What does the folder “node_modules” in “CODE\project” do, and is it safe to delete?
 
-Query memakai nama item dan maksimal tiga komponen lokasi terakhir. Nama user Windows disamarkan, dan isi file tidak dikirim.
+The query uses the item name and up to three trailing location components. Windows usernames are redacted, and file contents are never sent.
 
 > [!NOTE]
-> Google AI Overview tidak selalu muncul. Hasil bisa berupa artikel, forum, atau dokumentasi biasa. Fitur ini membutuhkan koneksi internet dan membuka layanan pihak ketiga.
+> Google AI Overview is not guaranteed. Results may be ordinary articles, forum posts, or documentation. This feature needs an internet connection and opens a third-party service.
 
-## Instalasi
+## Installation
 
-Ada dua cara menjalankan DiskAgent:
+There are two ways to run DiskAgent:
 
-- **Unduh binary** — cara tercepat, tidak perlu Rust.
-- **Build dari source** — lihat bagian [Build dari source](#build-dari-source).
+- **Download the binary** — fastest, no Rust required.
+- **Build from source** — see [Build from source](#build-from-source).
 
-### Unduh binary
+### Download the binary
 
-1. Buka halaman [Releases](https://github.com/dimsyyy/DiskAgent/releases) atau klik tombol **Unduh** di bagian atas.
-2. Unduh `DiskAgent.exe`.
-3. Jalankan langsung; tidak perlu installer.
+1. Open the [Releases](https://github.com/dimsyyy/DiskAgent/releases) page or click the **Download** button at the top.
+2. Download `DiskAgent.exe`.
+3. Run it directly; no installer is required.
 
-### Persyaratan build
+### Build requirements
 
 - Windows 10/11 64-bit.
-- [Rust](https://rustup.rs/) stable dengan edition 2021.
-- Salah satu linker:
-  - **MSVC** — Visual Studio Build Tools dengan workload *Desktop development with C++* (disarankan), atau
-  - **MinGW-w64** — `x86_64-w64-mingw32-gcc` tersedia di `PATH`.
+- [Rust](https://rustup.rs/) stable with edition 2021.
+- One of these linkers:
+  - **MSVC** — Visual Studio Build Tools with the *Desktop development with C++* workload (recommended), or
+  - **MinGW-w64** — `x86_64-w64-mingw32-gcc` available on `PATH`.
 
-## Build dari source
+## Build from source
 
-Setelah repositori di-clone:
+After cloning the repository:
 
 ```bat
 cd DiskAgent
 cargo build --release
 ```
 
-Binary hasil build:
+The resulting binary:
 
 ```text
 target\release\DiskAgent.exe
 ```
 
-Untuk build debug:
+For a debug build:
 
 ```bat
 cargo build
 target\debug\DiskAgent.exe
 ```
 
-### Menggunakan toolchain MSVC
+### Using the MSVC toolchain
 
 ```bat
 rustup default stable-x86_64-pc-windows-msvc
 cargo build --release
 ```
 
-### Menggunakan toolchain GNU / MinGW-w64
+### Using the GNU / MinGW-w64 toolchain
 
-Pastikan MinGW-w64 sudah terpasang dan folder `bin`-nya ada di `PATH`. Contoh:
+Make sure MinGW-w64 is installed and its `bin` folder is on `PATH`. Example:
 
 ```bat
 rustup default stable-x86_64-pc-windows-gnu
@@ -143,119 +143,119 @@ set PATH=%USERPROFILE%\.cargo\bin;C:\mingw64\bin;%PATH%
 cargo build --release
 ```
 
-## Menjalankan
+## Running
 
-Jika mengunduh dari Releases, cukup jalankan `DiskAgent.exe` dari folder unduhan.
+If you downloaded the binary from Releases, simply run `DiskAgent.exe` from your Downloads folder.
 
-Jalankan aplikasi tanpa argumen:
+Start the app without arguments:
 
 ```bat
 target\release\DiskAgent.exe
 ```
 
-Atau langsung memindai folder tertentu:
+Or scan a specific folder immediately:
 
 ```bat
 target\release\DiskAgent.exe "D:\Data"
 ```
 
-## Penggunaan
+## Usage
 
-1. Klik **Pilih Folder** / **Select Directory**, atau masukkan path di address bar.
-2. Tunggu pemindaian selesai. Progress dan status muncul di bagian bawah; pemindaian bisa dihentikan kapan saja.
-3. Gunakan tab **Detail** untuk melihat tabel ukuran dan **Grafik Treemap** untuk melihat proporsi visual.
-4. Gunakan **Filter** atau `Ctrl+F` untuk mempersempit hasil.
-5. Klik kanan item untuk membuka Explorer, menyalin path, menghapus permanen, atau mencari penjelasan di Google.
-6. Buka **Opsi → Bahasa** untuk mengganti bahasa antarmuka.
+1. Click **Select Directory**, or type a path in the address bar.
+2. Wait for the scan to finish. Progress and status appear at the bottom, and the scan can be stopped at any time.
+3. Use the **Details** tab for the size table and **Treemap Chart** for the visual proportions.
+4. Use **Filter** or `Ctrl+F` to narrow the results.
+5. Right-click an item to open Explorer, copy its path, delete it permanently, or search for an explanation on Google.
+6. Open **Options → Language** to switch the UI language.
 
-### Pengaturan
+### Settings
 
-Pengaturan disimpan otomatis di:
+Settings are saved automatically at:
 
 ```text
 %APPDATA%\DiskAgent\settings.json
 ```
 
-Yang disimpan: bahasa, unit, jumlah desimal, kolom yang terlihat, sortir, opsi hide-empty, status ribbon, dan folder terakhir. Filter yang sedang aktif tidak disimpan.
+Stored values: language, units, decimal places, visible columns, sorting, hide-empty, ribbon state, and last folder. Active filters are not persisted.
 
-Hapus file tersebut untuk kembali ke pengaturan default.
+Delete that file to reset the app to its default settings.
 
-## Keyboard shortcut
+## Keyboard shortcuts
 
-| Tombol | Aksi |
+| Key | Action |
 | --- | --- |
-| `↑` / `↓` | Pindah baris terpilih |
-| `→` | Expand folder / pindah ke anak pertama |
-| `←` | Collapse folder / pindah ke folder induk |
-| `Enter` | Expand atau collapse folder terpilih |
-| `Home` / `End` | Ke baris pertama / terakhir |
-| `PageUp` / `PageDown` | Geser seleksi 20 baris |
-| `Ctrl+F` | Buka pencarian |
-| `Ctrl+C` | Salin path item terpilih |
-| `Esc` | Tutup menu/popup |
+| `↑` / `↓` | Move the selection |
+| `→` | Expand a folder / move to its first child |
+| `←` | Collapse a folder / move to its parent |
+| `Enter` | Expand or collapse the selected folder |
+| `Home` / `End` | Jump to the first / last row |
+| `PageUp` / `PageDown` | Move the selection 20 rows |
+| `Ctrl+F` | Open search |
+| `Ctrl+C` | Copy the selected item's path |
+| `Esc` | Close a menu/popup |
 
-Klik dua kali pada folder akan expand/collapse. Klik dua kali pada file akan memilih file tersebut di Explorer.
+Double-clicking a folder expands/collapses it. Double-clicking a file selects that file in Explorer.
 
-## Arsitektur
+## Architecture
 
 ```text
 src/
-├── main.rs          # Entry point eframe
-├── app.rs           # State aplikasi, aksi, keyboard, penyimpanan settings
-├── scan.rs          # Scanner rekursif di background thread
-├── model.rs         # Node, ScanTree, agregasi, penghapusan subtree
-├── filter.rs        # Wildcard filter dan ViewStats
-├── format.rs        # Format byte, jumlah item, persen, unit
-├── platform.rs      # FFI Windows, volume, elevation, delete, open URL
-├── web.rs           # Query Google dan URL encoding
-├── i18n.rs          # Terjemahan English/Indonesia
-├── settings.rs      # Persistensi settings JSON
-├── theme.rs         # Warna dan style
+├── main.rs          # eframe entry point
+├── app.rs           # App state, actions, keyboard handling, settings persistence
+├── scan.rs          # Recursive scanner on a background thread
+├── model.rs         # Node, ScanTree, aggregation, subtree removal
+├── filter.rs        # Wildcard filters and ViewStats
+├── format.rs        # Byte, count, percent, and unit formatting
+├── platform.rs      # Windows FFI, volume info, elevation, delete, open URL
+├── web.rs           # Google query builder and URL encoding
+├── i18n.rs          # English/Indonesian translations
+├── settings.rs      # JSON settings persistence
+├── theme.rs         # Colors and style
 └── ui/
-    ├── ribbon.rs    # Tab, grup tombol, address bar
-    ├── details.rs   # Tabel virtualized dan interaksi baris
+    ├── ribbon.rs    # Tabs, button groups, address bar
+    ├── details.rs   # Virtualized table and row interaction
     ├── treemap.rs   # Squarified treemap
     ├── statusbar.rs # Status bar
     ├── dialogs.rs   # Filter, columns, new folder, delete, search
-    └── icons.rs     # Ikon vektor
+    └── icons.rs     # Vector icons
 ```
 
-### Teknologi
+### Technology
 
-| Komponen | Teknologi |
+| Component | Technology |
 | --- | --- |
-| GUI | [eframe](https://github.com/emilk/eframe) 0.29 + [egui](https://github.com/emilk/egui) dengan backend OpenGL (glow) |
-| File dialog | [rfd](https://github.com/PolyMeilex/rfd) |
+| GUI | [eframe](https://github.com/emilk/eframe) 0.29 + [egui](https://github.com/emilk/egui) with the OpenGL (glow) backend |
+| File dialogs | [rfd](https://github.com/PolyMeilex/rfd) |
 | Settings | serde + serde_json |
 | Scanner | `std::fs` + background thread + channel/atomic progress |
-| Windows API | FFI manual untuk volume, elevation, ShellExecute, dan timestamp |
+| Windows API | Manual FFI for volume info, elevation, ShellExecute, and timestamps |
 
 ## Roadmap
 
-- [x] Scan folder rekursif dengan progress dan cancellation.
-- [x] Details tree, treemap, filter, pencarian, sortir, dan unit.
-- [x] Bahasa English/Indonesia dan settings persisten.
-- [x] Hapus permanen, pembuatan folder, buka Explorer, dan ekspor CSV.
-- [x] Integrasi Google Search untuk **Folder Apa ini?**.
-- [x] Rilis binary v0.1.0 di GitHub Releases.
-- [ ] Fitur lanjutan (scheduled scan, duplicate finder, file age, top files).
-- [ ] Installer Windows dan ikon aplikasi kustom.
-- [ ] CI dan lebih banyak unit test.
+- [x] Recursive folder scanning with progress and cancellation.
+- [x] Details tree, treemap, filters, search, sorting, and units.
+- [x] English/Indonesian UI and persistent settings.
+- [x] Permanent delete, folder creation, open in Explorer, and CSV export.
+- [x] Google Search integration for **What is this folder?**.
+- [x] v0.1.0 release binary on GitHub Releases.
+- [ ] Advanced features (scheduled scans, duplicate finder, file age, top files).
+- [ ] Windows installer and a custom app icon.
+- [ ] CI and more unit tests.
 
-## Batasan
+## Limitations
 
-- Pemindaian memakai recursive filesystem walk, bukan pembacaan langsung MFT NTFS. Volume yang sangat besar bisa lebih lambat dibanding tools khusus NTFS.
-- Allocated size dihitung berdasarkan cluster size volume; hasilnya bisa berbeda pada kondisi kompresi, enkripsi, atau reparse point tertentu.
-- Fitur lanjutan seperti scheduled scan, duplicate finder, dan analisis umur file belum tersedia.
-- **Hapus permanen tidak melalui Recycle Bin.** Backup data penting sebelum menghapus.
-- **Folder Apa ini?** bergantung pada Google dan koneksi internet; hasilnya bukan jaminan bahwa item aman dihapus.
-- Binary rilis belum ditandatangani, jadi Windows SmartScreen bisa menampilkan peringatan saat pertama dijalankan.
+- Scanning uses a recursive filesystem walk, not direct NTFS MFT parsing. Very large volumes may be slower than tools built specifically for NTFS.
+- Allocated size is based on the volume cluster size; results can differ for compressed, encrypted, or reparse-point files.
+- Advanced features such as scheduled scans, a duplicate finder, and file-age analysis are not available yet.
+- **Permanent delete bypasses the Recycle Bin.** Back up important data before deleting.
+- **What is this folder?** depends on Google and an internet connection; the result is not a guarantee that an item is safe to delete.
+- Release binaries are unsigned, so Windows SmartScreen may show a warning on first launch.
 
-## Kontribusi
+## Contributing
 
-Kontribusi terbuka untuk perbaikan bug, dokumentasi, terjemahan, dan fitur baru yang masih dalam ruang lingkup aplikasi.
+Contributions are welcome for bug fixes, documentation, translations, and new features that fit the app's scope.
 
-Sebelum mengirim pull request:
+Before opening a pull request:
 
 ```bat
 cargo fmt
@@ -263,18 +263,18 @@ cargo test
 cargo build --release
 ```
 
-Untuk perubahan besar, sebaiknya buka issue atau diskusi terlebih dahulu agar arah implementasinya jelas.
+For larger changes, please open an issue or discussion first so the implementation direction is clear.
 
-## Lisensi
+## License
 
-Dirilis di bawah [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).
 
-## Penghargaan
+## Acknowledgements
 
-- Terinspirasi oleh **TreeSize** dari JAM Software.
-- Dibangun dengan Rust, egui/eframe, rfd, dan serde.
-- Semua ikon antarmuka digambar sendiri dengan vektor.
+- Inspired by **TreeSize** from JAM Software.
+- Built with Rust, egui/eframe, rfd, and serde.
+- All UI icons are drawn in vector.
 
 ---
 
-<p align="center"><sub>Dibuat untuk membantu menjawab pertanyaan: “Folder apa ini, dan seberapa besar ruang yang dipakainya?”</sub></p>
+<p align="center"><sub>Built to answer the question: “What is this folder, and how much space is it using?”</sub></p>
